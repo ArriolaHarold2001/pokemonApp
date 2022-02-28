@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import Search from "./component/Search";
 import "./index.css";
 
 class App extends Component {
@@ -9,30 +10,32 @@ class App extends Component {
       isLoaded: false,
     };
   }
-  componentDidMount() {
-    fetch(`https://pokeapi.co/api/v2/pokemon/rayquaza`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((json) => {
-        this.setState({
-          isLoaded: true,
-          items: json,
-        });
-      })
-      .catch((err) => {
-        throw err;
+
+  //componentUpdate
+  async componentDidMount() {
+    try {
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/abra`);
+      const data = await res.json();
+      this.setState({
+        isLoaded: true,
+        items: data,
       });
+    } catch (err) {
+      throw err;
+    }
   }
 
   render() {
     const { isLoaded, items } = this.state;
 
     if (!isLoaded) {
-      return <h1>Content Loading...</h1>;
+      return <h1 className="loading">Content Loading...</h1>;
+      // return <Search />;
     } else {
       return (
         <>
+          {/* <Search /> */}
+          {console.log(this.state.items)}
           <div className="container">
             <div className="pokemon">
               <h1 className="poke-name">{items.name}</h1>

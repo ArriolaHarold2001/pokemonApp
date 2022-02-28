@@ -13,6 +13,13 @@ body {
   text-shadow: 2px 1px 1.5px #fff;
 }
 
+.loading {
+  margin: 250px auto;
+  font-size: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 ul {
   list-style: none;
 }
