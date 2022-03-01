@@ -1,27 +1,17 @@
-// import React, { Components } from "react";
-// import "../index.css";
+import React from "react";
+import "../index.css";
 
-// class Search extends React {
-//   constructor() {
-//     // super(props);
-//     // this.state = {
-//     //   items: [],
-//     //   isLoaded: false,
-//     //   search: "",
-//     // };
-//   }
+const Search = ({ fetchPoke }) => {
+  return (
+    <>
+      <input
+        type="text"
+        className="poke-search"
+        placehold="Enter Pokemon Name"
+      ></input>
+      <button onClick={fetchPoke}>Submit</button>
+    </>
+  );
+};
 
-//   // render() {
-//   //   return (
-//   //     <div>
-//   //       <input
-//   //         type="text"
-//   //         className="poke-search"
-//   //         placehold="Enter Pokemon Name"
-//   //       ></input>
-//   //     </div>
-//   //   );
-//   // }
-// }
-
-// export default Search;
+export default Search;
